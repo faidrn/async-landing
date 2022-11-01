@@ -2,6 +2,7 @@
 [Video 21] - Consumiendo API
 
 https://www.youtube.com/channel/UCGHfvNXqdkrthrd5jUFB93A
+https://rapidapi.com/ytdlfree/api/youtube-v31
  */
 const API = 'https://youtube-v31.p.rapidapi.com/search?channelId=UCGHfvNXqdkrthrd5jUFB93A&part=snippet%2Cid&order=date&maxResults=9';
 
