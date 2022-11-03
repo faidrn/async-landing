@@ -3,6 +3,16 @@
 
 https://www.youtube.com/channel/UCGHfvNXqdkrthrd5jUFB93A
 https://rapidapi.com/ytdlfree/api/youtube-v31
+
+Dependencia para publicar ramas en github
+gh-pages
+https://www.npmjs.com/package/gh-pages
+
+proyectos del curso
+https://showcase.gndx.io/
+
+Scripts: async, defer
+https://es.javascript.info/script-async-defer
  */
 const API = 'https://youtube-v31.p.rapidapi.com/search?channelId=UCGHfvNXqdkrthrd5jUFB93A&part=snippet%2Cid&order=date&maxResults=9';
 
@@ -34,7 +44,7 @@ async function fetchData(urlApi){
                 <div class="group relative">
                     <div
                         class="w-full bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:aspect-none">
-                        <img src="${video.snippet.thumbnail.high.url}" alt="${video.snippet.description}" class="w-full">
+                        <img src="${video.snippet.thumbnails.high.url}" alt="${video.snippet.description}" class="w-full">
                     </div>
                     <div class="mt-4 flex justify-between">
                         <h3 class="text-sm text-gray-700">
@@ -46,7 +56,11 @@ async function fetchData(urlApi){
             `).slice(0, 4).join('')} 
             
         `; // usamos slice para mostrar solo 4 elementos de los 9 que nos trae la API, join une dichos elementos
-    } catch{
 
+        // agregamos la insercion de la vista creada
+        content.innerHTML = view;
+    } catch (error){
+        // preferiblemente mostrar un mensaje al usuario para q entienda que la API no esta disponible o que ha causado un error
+        console.log(error);
     }
 })();
